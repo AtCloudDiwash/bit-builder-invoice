@@ -2,6 +2,8 @@
 
 This project is a simple, yet very useful invoicing system created for the BitBuilders Hackathon. It's a full-stack application built with Next.js, Tailwind CSS, and Supabase.
 
+[Live Demo](https://bit-builder-invoice.vercel.app/)
+
 ## How It Works
 
 The application is a Next.js project structured with a clear separation of concerns, utilizing a microservice architecture with distinct roles for different users.
