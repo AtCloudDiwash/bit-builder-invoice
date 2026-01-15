@@ -42,34 +42,3 @@ CREATE TABLE IF NOT EXISTS invoice_items (
 ALTER TABLE categories ENABLE ROW LEVEL SECURITY;
 ALTER TABLE invoices ENABLE ROW LEVEL SECURITY;
 ALTER TABLE invoice_items ENABLE ROW LEVEL SECURITY;
-
--- 5. Create RLS policies
--- These policies determine who can access or modify the data.
--- For this hackathon, we'll allow public read and write access,
--- as there is no authentication.
-
--- Policies for 'categories' table
-DROP POLICY IF EXISTS "Allow public read access" ON categories;
-CREATE POLICY "Allow public read access" ON categories FOR SELECT USING (true);
-
-DROP POLICY IF EXISTS "Allow anonymous insert access" ON categories;
-CREATE POLICY "Allow anonymous insert access" ON categories FOR INSERT WITH CHECK (true);
-
-DROP POLICY IF EXISTS "Allow anonymous delete access" ON categories;
-CREATE POLICY "Allow anonymous delete access" ON categories FOR DELETE USING (true);
-
-
--- Policies for 'invoices' table
-DROP POLICY IF EXISTS "Allow public read access" ON invoices;
-CREATE POLICY "Allow public read access" ON invoices FOR SELECT USING (true);
-
-DROP POLICY IF EXISTS "Allow anonymous insert access" ON invoices;
-CREATE POLICY "Allow anonymous insert access" ON invoices FOR INSERT WITH CHECK (true);
-
-
--- Policies for 'invoice_items' table
-DROP POLICY IF EXISTS "Allow public read access" ON invoice_items;
-CREATE POLICY "Allow public read access" ON invoice_items FOR SELECT USING (true);
-
-DROP POLICY IF EXISTS "Allow anonymous insert access" ON invoice_items;
-CREATE POLICY "Allow anonymous insert access" ON invoice_items FOR INSERT WITH CHECK (true);
